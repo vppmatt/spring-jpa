@@ -27,6 +27,8 @@ The sesion list for this course is:
 
 601 Testing Spring Boot applications
 
-Other repositories that you may find useful for this course are:
+**Other repositories that you may find useful for this course are:**
+
 https://github.com/vppmatt/curl-generator  - this contains an HTML + Javascript file that can be used to test REST apis
+
 https://github.com/vppmatt/paymentgateway - full demo rest application
