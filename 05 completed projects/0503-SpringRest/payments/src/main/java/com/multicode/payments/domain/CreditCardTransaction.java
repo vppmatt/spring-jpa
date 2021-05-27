@@ -1,4 +1,4 @@
-package com.multicode.domain;
+package com.multicode.payments.domain;
 
 import javax.persistence.*;
 import java.sql.*;
@@ -13,7 +13,7 @@ public class CreditCardTransaction {
     private Double amount;
     private String country;
     private String currency;
-    private java.sql.Date date;
+    private Date date;
 
     @Column(name = "order_id")
     private String orderId;

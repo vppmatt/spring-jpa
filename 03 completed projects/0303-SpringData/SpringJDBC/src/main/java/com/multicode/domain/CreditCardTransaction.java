@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.sql.*;
 
 @Entity
-@Table(name = "ccTransactions")
+@Table(name = "cctransactions")
 public class CreditCardTransaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Double amount;
     private String country;

@@ -17,23 +17,23 @@
 CREATE DATABASE IF NOT EXISTS `payments` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `payments`;
 
--- Dumping structure for table payments.ccTransactions
-CREATE TABLE IF NOT EXISTS `ccTransactions` (
+-- Dumping structure for table payments.cctransactions
+CREATE TABLE IF NOT EXISTS `cctransactions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `amount` decimal(19,2) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   `currency` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  `order_id` varchar(255) DEFAULT NULL,
+  `order_id` varchar(255) NOT NULL,
   `tax_code` int(11) NOT NULL,
   `tax_rate` double DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4824 DEFAULT CHARSET=latin1;
 
--- Dumping data for table payments.ccTransactions: ~4,796 rows (approximately)
-/*!40000 ALTER TABLE `ccTransactions` DISABLE KEYS */;
-INSERT INTO `ccTransactions` (`id`, `amount`, `country`, `currency`, `date`, `order_id`, `tax_code`, `tax_rate`, `type`) VALUES
+-- Dumping data for table payments.cctransactions: ~4,796 rows (approximately)
+/*!40000 ALTER TABLE `cctransactions` DISABLE KEYS */;
+INSERT INTO `cctransactions` (`id`, `amount`, `country`, `currency`, `date`, `order_id`, `tax_code`, `tax_rate`, `type`) VALUES
 	(1, 60.00, 'usa', 'USD', '2016-12-30 00:00:00', '21213627', 0, 0, 'VISA'),
 	(2, 35.00, 'usa', 'USD', '2016-12-30 00:00:00', '21213448', 0, 0, 'VISA'),
 	(3, 35.00, 'usa', 'USD', '2016-12-30 00:00:00', '21213511', 0, 0, 'DELTA'),
@@ -4681,7 +4681,7 @@ INSERT INTO `ccTransactions` (`id`, `amount`, `country`, `currency`, `date`, `or
 	(4821, -79.00, 'USA', 'USD', '2021-03-02 00:00:00', 'MANUAL', 0, 0, 'Refund'),
 	(4822, -126.00, 'USA', 'USD', '2021-03-02 00:00:00', 'MANUAL', 0, 0, 'Refund'),
 	(4823, -180.00, 'USA', 'USD', '2021-03-22 00:00:00', 'MANUAL', 0, 0, 'Refund');
-/*!40000 ALTER TABLE `ccTransactions` ENABLE KEYS */;
+/*!40000 ALTER TABLE `cctransactions` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

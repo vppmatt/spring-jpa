@@ -1,19 +1,19 @@
-package com.multicode.domain;
+package com.multicode.payments.domain;
 
 import javax.persistence.*;
 import java.sql.*;
 
 @Entity
-@Table(name = "cctransactions")
+@Table(name = "ccTransactions")
 public class CreditCardTransaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Double amount;
     private String country;
     private String currency;
-    private java.sql.Date date;
+    private Date date;
 
     @Column(name = "order_id")
     private String orderId;
