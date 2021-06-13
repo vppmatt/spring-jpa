@@ -5,7 +5,8 @@ jdbc:mysql://localhost:3306/invoice_manager?user=root&password=password
 If this gives you an error relating to server timezones, use the following
 version instead:
 
-jdbc:mysql://localhost:3306/invoice_manager?user=root&password=password?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London
+jdbc:mysql://localhost:3306/invoice_manager?user=root&password=password&
+useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London
 
 For a list of all the possible timezone values you could use (find one for your location!) see:
 
