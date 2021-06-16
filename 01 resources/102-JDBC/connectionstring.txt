@@ -6,7 +6,11 @@ If this gives you an error relating to server timezones, use the following
 version instead:
 
 jdbc:mysql://localhost:3306/invoice_manager?user=root&password=password&
-useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London
+useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London&useSSL=false
+
+Note that if you are doing this as the URL in persistence.xml you need to "escape" the ampersands, so the URL would be:
+localhost:3306/invoice_manager?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Europe/London&amp;useSSL=false
+
 
 For a list of all the possible timezone values you could use (find one for your location!) see:
 
