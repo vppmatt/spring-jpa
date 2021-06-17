@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -18,31 +19,29 @@ public class CreditCardTransactionDaoJPAImpl implements CreditCardTransactionDao
     private EntityManager em;
 
     @Override
-    public List<CreditCardTransaction> getAllTransactionsForOrder(String orderId) {
+    public List<CreditCardTransaction> getTransactionsByOrderNumber(String orderId) {
 
-        Query query = em.createQuery("Select c from CreditCardTransaction c");
+        Query query = em.createQuery("SELECT c FROM CreditCardTransaction c where c.orderId = " + orderId);
+//        TypedQuery<CreditCardTransaction> query = em
+//                .createQuery("SELECT c FROM CreditCardTransaction c where c.orderId = " + orderId,
+//                        CreditCardTransaction.class);
+
         return query.getResultList();
     }
 
     @Override
-    public boolean setTaxRate(Integer transactionId, Double newRate) {
+    public boolean setTaxRate(Integer transId, Double newRate) {
 
-        //later could update this to just pass in the whole transaction rather than just the id
-        CreditCardTransaction transaction = em.find(CreditCardTransaction.class,transactionId);
-        boolean result = false;
-        if (transaction != null) {
+        CreditCardTransaction transaction = em.find(CreditCardTransaction.class, transId);
+
+        if(transaction != null) {
             transaction.setTaxRate(newRate);
-
-            try {
-                em.persist(transaction);
-                //should put in try catch block and return false if fails
-                result = true;
-
-            } catch (Exception e) {
-
-            }
+            em.persist(transaction);
+            return true;
         }
-        return result;
+
+        return false;
+
     }
 
 }

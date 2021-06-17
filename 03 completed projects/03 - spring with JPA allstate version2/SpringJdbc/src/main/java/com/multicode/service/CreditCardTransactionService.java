@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface CreditCardTransactionService {
 
-    public List<CreditCardTransaction> getAllTransactionsForOrder(String orderId);
+    List<CreditCardTransaction> getTransactionsByOrderId(String id);
 
-    public boolean updateTaxRate(Integer transactionIdStart, Integer transactionIdEnd, Double newRate);
+    boolean updateTaxRate(Integer transactionIdStart, Integer transactionIdEnd, Double newTaxRate);
+
 }
-

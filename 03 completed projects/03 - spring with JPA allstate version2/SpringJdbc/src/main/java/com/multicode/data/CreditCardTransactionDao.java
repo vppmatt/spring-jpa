@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface CreditCardTransactionDao {
 
-    public List<CreditCardTransaction> getAllTransactionsForOrder(String orderId);
-
-    public boolean setTaxRate(Integer transactionId, Double newRate);
+    List<CreditCardTransaction> getTransactionsByOrderNumber(String orderId);
+    boolean setTaxRate(Integer transId, Double newRate);
 }

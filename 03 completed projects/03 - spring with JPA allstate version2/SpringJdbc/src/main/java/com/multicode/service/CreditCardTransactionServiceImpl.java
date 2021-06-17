@@ -15,19 +15,18 @@ public class CreditCardTransactionServiceImpl implements CreditCardTransactionSe
     @Autowired
     private CreditCardTransactionDao dao;
 
-
     @Override
-    public List<CreditCardTransaction> getAllTransactionsForOrder(String orderId) {
-        return dao.getAllTransactionsForOrder(orderId);
+    public List<CreditCardTransaction> getTransactionsByOrderId(String id) {
+        return dao.getTransactionsByOrderNumber(id);
     }
 
     @Override
-    public boolean updateTaxRate(Integer transactionIdStart, Integer transactionIdEnd, Double newRate) {
-        boolean result = true;
-        for (int id = transactionIdStart; id <= transactionIdEnd; id++) {
-            boolean check = dao.setTaxRate(id, newRate);
-            if (!check) result = false;
+    public boolean updateTaxRate(Integer transactionIdStart, Integer transactionIdEnd, Double newTaxRate) {
+        boolean didItWork = true;
+        for (int i = transactionIdStart; i <= transactionIdEnd; i++) {
+            boolean check = dao.setTaxRate(i, newTaxRate);
+            if (!check) didItWork = false;
         }
-        return result;
+        return didItWork;
     }
 }
