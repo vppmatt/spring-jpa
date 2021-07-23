@@ -6,7 +6,7 @@ Files that you need for the sessions can be found in the resources folders. The 
 
 The sesion list for this course is:
 
-101	Relational Databases
+101	Soure Control with Git
 
 102 Using JDBC
 
@@ -38,8 +38,9 @@ The sesion list for this course is:
 
 503 Implementing restful webservices
 
+504 Testing Spring Boot applications
 
-601 Testing Spring Boot applications
+505 Continuous Integration with Jenkins
 
 
 
