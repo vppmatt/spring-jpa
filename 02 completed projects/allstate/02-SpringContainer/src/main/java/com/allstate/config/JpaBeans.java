@@ -1,4 +1,4 @@
-package com.multicode.config;
+package com.allstate.config;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.*;

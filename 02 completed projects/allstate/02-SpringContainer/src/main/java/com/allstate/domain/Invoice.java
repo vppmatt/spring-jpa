@@ -1,4 +1,4 @@
-package entities;
+package com.allstate.domain;
 
 import javax.persistence.*;
 import java.util.*;
