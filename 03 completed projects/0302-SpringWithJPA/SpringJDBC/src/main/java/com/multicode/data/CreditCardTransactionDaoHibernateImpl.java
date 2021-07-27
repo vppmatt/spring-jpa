@@ -5,10 +5,11 @@ import org.springframework.context.annotation.*;
 import org.springframework.stereotype.*;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.*;
 
 @Component
-@Primary
+@Transactional
 public class CreditCardTransactionDaoHibernateImpl implements CreditCardTransactionDao{
 
     @PersistenceContext

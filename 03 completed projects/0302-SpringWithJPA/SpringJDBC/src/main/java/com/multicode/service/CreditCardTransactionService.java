@@ -1,28 +1,11 @@
 package com.multicode.service;
 
-import com.multicode.data.*;
-import com.multicode.domain.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
+import com.multicode.domain.CreditCardTransaction;
 
-import javax.transaction.*;
-import java.util.*;
+import java.util.List;
 
-@Component
-@Transactional(Transactional.TxType.REQUIRED)
-public class CreditCardTransactionService {
+public interface CreditCardTransactionService {
+    List<CreditCardTransaction> getAllTransactionsForOrder(String orderId);
 
-    @Autowired
-    private CreditCardTransactionDao dao;
-
-    public List<CreditCardTransaction> getAllTransactionsForOrder(String orderId) {
-        return dao.findAllByOrderId(orderId);
-    }
-
-    public void udpateTaxRate(Integer taxCode, Double taxRate) {
-        List<CreditCardTransaction> transactions = dao.findAllByTaxCode(taxCode);
-        for (CreditCardTransaction ccTransaction : transactions) {
-            dao.setTaxRate(ccTransaction.getId(), taxRate);
-        }
-    }
+    void udpateTaxRate(Integer taxCode, Double taxRate);
 }

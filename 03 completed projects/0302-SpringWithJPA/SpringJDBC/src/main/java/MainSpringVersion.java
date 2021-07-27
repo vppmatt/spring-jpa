@@ -10,7 +10,7 @@ public class MainSpringVersion {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ProjectConfiguration.class);
-        CreditCardTransactionService service = applicationContext.getBean(CreditCardTransactionService.class);
+        CreditCardTransactionService service = applicationContext.getBean(CreditCardTransactionServiceImpl.class);
 
         List<CreditCardTransaction> ccTransactionList = service.getAllTransactionsForOrder("21212355");
         
