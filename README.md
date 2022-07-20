@@ -48,6 +48,6 @@ The sesion list for this course is:
 
 https://github.com/vppmatt/curl-generator  - this contains an HTML + Javascript file that can be used to test REST apis
 
-https://github.com/vppmatt/paymentgateway - full demo rest application
+https://github.com/vppmatt/paymentgateway - full demo rest application (uses a mysql database)
 
-https://github.com/nicktodd/spring-course - the repository of the original author of this course - contains lots of example code!
+https://github.com/vppmatt/paymentgateway-standalone - full demo rest application (standalone version)
